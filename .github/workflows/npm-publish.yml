@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 12
       - run: npm install
-      - run: node_modules/.bin/node-gyp rebuild
+      - run: npm run-script build
 
   publish-npm:
     needs: build

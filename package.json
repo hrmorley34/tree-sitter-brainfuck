@@ -16,5 +16,13 @@
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "hrmorley34",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hrmorley34/tree-sitter-brainfuck"
+  },
+  "bugs": {
+    "url": "https://github.com/hrmorley34/tree-sitter-brainfuck/issues"
+  },
+  "homepage": "https://github.com/hrmorley34/tree-sitter-brainfuck"
 }
