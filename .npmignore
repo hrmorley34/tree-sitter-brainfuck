@@ -2,3 +2,7 @@ corpus
 examples
 build
 script
+.github
+.gitignore
+.gitattributes
+6.1.12
