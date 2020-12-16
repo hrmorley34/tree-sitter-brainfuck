@@ -26,6 +26,10 @@
       ]
     },
     "initial_comment": {
+      "type": "SYMBOL",
+      "name": "_any_comment"
+    },
+    "_any_comment": {
       "type": "PREC_RIGHT",
       "value": 0,
       "content": {
@@ -38,18 +42,18 @@
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "initial_comment_loop"
+                "name": "comment_loop"
               },
               {
                 "type": "SYMBOL",
-                "name": "_comment"
+                "name": "comment"
               }
             ]
           }
         }
       }
     },
-    "initial_comment_loop": {
+    "comment_loop": {
       "type": "PREC",
       "value": 10,
       "content": {
@@ -66,7 +70,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "initial_comment_loop"
+                  "name": "comment_loop"
                 },
                 {
                   "type": "PATTERN",
@@ -83,21 +87,42 @@
       }
     },
     "_any": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "loop"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_command"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_comment"
-        }
-      ]
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "loop"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_any_comment"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_command"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        ]
+      }
     },
     "loop": {
       "type": "SEQ",
@@ -172,7 +197,7 @@
       "type": "STRING",
       "value": "."
     },
-    "_comment": {
+    "comment": {
       "type": "PATTERN",
       "value": "[^<>+\\-\\[\\],.]+"
     }

@@ -4,10 +4,11 @@ module.exports = grammar({
   rules: {
     source_file: $ => seq(optional($.initial_comment), repeat($._any)),
 
-    initial_comment: $ => prec.right(repeat1(prec(10, choice($.initial_comment_loop, $._comment)))),
-    initial_comment_loop: $ => prec(10, seq('[', repeat(choice($.initial_comment_loop, /[^\[\]]+/)), ']')),
+    initial_comment: $ => $._any_comment,
+    _any_comment: $ => prec.right(repeat1(prec(10, choice($.comment_loop, $.comment)))),
+    comment_loop: $ => prec(10, seq('[', repeat(choice($.comment_loop, /[^\[\]]+/)), ']')),
 
-    _any: $ => choice($.loop, $._command, $._comment),
+    _any: $ => prec.right(choice(seq($.loop, optional($._any_comment)), $._command, $.comment)),
     loop: $ => seq('[', repeat($._any), ']'),
     _command: $ => choice($.pointerleft, $.pointerright, $.memoryadd, $.memorysubtract, $.memoryinput, $.memoryoutput),
     pointerleft: $ => '<',
@@ -17,6 +18,6 @@ module.exports = grammar({
     memoryinput: $ => ',',
     memoryoutput: $ => '.',
 
-    _comment: $ => /[^<>+\-\[\],.]+/,
+    comment: $ => /[^<>+\-\[\],.]+/,
   }
 });
