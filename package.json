@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-brainfuck",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tree sitter for Brainfuck",
   "main": "index.js",
   "dependencies": {
@@ -12,7 +12,8 @@
     "tree-sitter-cli": "^0.17.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tree-sitter generate && node-gyp build",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "hrmorley34",
   "license": "ISC"

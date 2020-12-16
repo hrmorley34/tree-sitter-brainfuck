@@ -2,7 +2,32 @@
   {
     "type": "initial_comment",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "initial_comment_loop",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "initial_comment_loop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "initial_comment_loop",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "loop",
