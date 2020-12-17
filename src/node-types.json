@@ -29,6 +29,10 @@
         {
           "type": "comment_loop",
           "named": true
+        },
+        {
+          "type": "ext_debugger",
+          "named": true
         }
       ]
     }
@@ -47,6 +51,10 @@
         },
         {
           "type": "comment_loop",
+          "named": true
+        },
+        {
+          "type": "ext_debugger",
           "named": true
         },
         {
@@ -97,6 +105,10 @@
           "named": true
         },
         {
+          "type": "ext_debugger",
+          "named": true
+        },
+        {
           "type": "initial_comment",
           "named": true
         },
@@ -141,6 +153,10 @@
   },
   {
     "type": "comment",
+    "named": true
+  },
+  {
+    "type": "ext_debugger",
     "named": true
   },
   {
