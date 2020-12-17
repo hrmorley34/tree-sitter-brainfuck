@@ -12,5 +12,6 @@ grr
   ->.         yeet
   [ah.+>]   loop or something
 ]
+# debug point?
 [this won't run, I think.]
 - text -

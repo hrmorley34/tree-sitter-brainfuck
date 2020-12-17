@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "tree-sitter generate && node-gyp build",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "bash -c \"tree-sitter parse -qst examples/parse-test.bf && (! tree-sitter parse -qst examples/parse-fail.bf) && echo Success!\""
   },
   "author": "hrmorley34",
   "license": "ISC",
