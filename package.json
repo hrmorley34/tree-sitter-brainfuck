@@ -16,7 +16,7 @@
     "test": "bash -c \"tree-sitter parse -qst examples/parse-test.bf && (! tree-sitter parse -qst examples/parse-fail.bf) && echo Success!\""
   },
   "author": "hrmorley34",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/hrmorley34/tree-sitter-brainfuck"
